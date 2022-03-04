@@ -1,0 +1,29 @@
+server:
+  port: 8080
+  
+spring:
+  datasource:
+    url: jdbc:h2:mem:testRs
+    driverClassName: org.h2.Driver
+    username: sa
+    password: password
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+  h2:
+    console:
+      enabled: true
+      settings:
+        web-allow-others: true
+
+  security:    oauth2:
+      client:
+        clien-id: clientId
+        client-secret: clientSecret      resource:
+        token-info-uri: http://localhost:8081/oauth/check_token
+
+logging:
+  level:
+    root: info
